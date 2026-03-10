@@ -8,7 +8,6 @@ import org.springframework.context.annotation.Primary;
 import java.util.List;
 
 @Component
-@Primary
 public class MemCydrRepository implements CydrRepository {
 
     @Override

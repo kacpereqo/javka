@@ -2,17 +2,17 @@ package cydrownia.repository.mem;
 
 import cydrownia.model.Producent;
 import cydrownia.repository.ProducentRepository;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class MemProducentRepository implements ProducentRepository {
 
-    // Prosta lista udająca bazę danych
     private List<Producent> db = new ArrayList<>();
 
     public MemProducentRepository() {
-        // Dodajmy przykładowe dane na start
         db.add(new Producent(1, "Cydr Lubelski", "Duży producent"));
         db.add(new Producent(2, "Cydr Chyliczki", "Rzemieślniczy"));
     }

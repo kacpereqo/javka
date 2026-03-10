@@ -1,8 +1,5 @@
 package cydrownia.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Cydr {
 
     private int id;
@@ -10,12 +7,6 @@ public class Cydr {
     private String styl; // np. "Półsłodki", "Musujący"
     private double cena;
     private boolean dostepny;
-
-    // Relacja: Cydr ma producenta (lub wielu, jeśli to kooperacja)
-    private List<Producent> producenci = new ArrayList<>();
-
-    // Relacja: Cydr znajduje się w wielu zamówieniach klientów
-    private List<Zamowienie> zamowienia = new ArrayList<>();
 
     public Cydr(int id, String nazwa, String styl, double cena) {
         this.id = id;
@@ -28,7 +19,6 @@ public class Cydr {
     public Cydr() {
     }
 
-    // Gettery i Settery
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
 
@@ -44,20 +34,6 @@ public class Cydr {
     public boolean isDostepny() { return dostepny; }
     public void setDostepny(boolean dostepny) { this.dostepny = dostepny; }
 
-    public List<Producent> getProducenci() { return producenci; }
-    public void setProducenci(List<Producent> producenci) { this.producenci = producenci; }
-
-    public List<Zamowienie> getZamowienia() { return zamowienia; }
-    public void setZamowienia(List<Zamowienie> zamowienia) { this.zamowienia = zamowienia; }
-
-    // Metody pomocnicze
-    public void addProducent(Producent p) {
-        this.producenci.add(p);
-    }
-
-    public void addZamowienie(Zamowienie z) {
-        this.zamowienia.add(z);
-    }
 
     @Override
     public String toString() {

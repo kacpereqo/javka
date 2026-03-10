@@ -4,18 +4,21 @@ import cydrownia.model.Cydr;
 import cydrownia.model.Producent;
 import cydrownia.repository.ProducentRepository;
 import cydrownia.service.ProducentService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
+@Service
 public class ProducentServiceBean implements ProducentService {
 
     private final Logger logger = Logger.getLogger(ProducentServiceBean.class.getName());
 
-    // Wstrzykujemy repozytorium producentów
     private final ProducentRepository producentRepository;
 
+    @Autowired
     public ProducentServiceBean(ProducentRepository producentRepository) {
         this.producentRepository = producentRepository;
     }
@@ -38,12 +41,7 @@ public class ProducentServiceBean implements ProducentService {
     @Override
     public List<Producent> getProducentsOfCydr(Cydr c) {
         logger.info("Pobieranie producentów dla cydru: " + c.getNazwa());
-        // Możemy skorzystać z Cydru, jeśli ma wypełnioną listę (podejście obiektowe)
-        if (c.getProducenci() != null && !c.getProducenci().isEmpty()) {
-            return c.getProducenci();
-        }
 
-        // Lub alternatywnie przeszukać repozytorium (podejście bazodanowe/zachowawcze)
         return producentRepository.findAll().stream()
                 .filter(p -> p.getOferta().stream().anyMatch(cydr -> cydr.getId() == c.getId()))
                 .collect(Collectors.toList());

@@ -7,6 +7,5 @@ public interface ProducentRepository {
     List<Producent> findAll();
     Producent findByName(String nazwa);
 
-    // TEGO BRAKOWAŁO:
     void add(Producent producent);
 }

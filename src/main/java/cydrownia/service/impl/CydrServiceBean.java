@@ -4,19 +4,20 @@ import cydrownia.model.Cydr;
 import cydrownia.model.Producent;
 import cydrownia.repository.CydrRepository;
 import cydrownia.service.CydrService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
-import java.util.stream.Collectors;
 
+@Service
 public class CydrServiceBean implements CydrService {
 
     private final Logger logger = Logger.getLogger(CydrServiceBean.class.getName());
 
-    // Wstrzykujemy repozytorium cydrów
     private final CydrRepository cydrRepository;
 
+    @Autowired
     public CydrServiceBean(CydrRepository cydrRepository) {
         this.cydrRepository = cydrRepository;
     }
@@ -30,7 +31,6 @@ public class CydrServiceBean implements CydrService {
     @Override
     public Cydr getCydrById(int id) {
         logger.info("Szukanie cydru o ID: " + id);
-        // Ponieważ repozytorium nie ma findById, filtrujemy strumieniem w pamięci
         return cydrRepository.findAll().stream()
                 .filter(c -> c.getId() == id)
                 .findFirst()
@@ -40,12 +40,7 @@ public class CydrServiceBean implements CydrService {
     @Override
     public List<Cydr> getCydrsByProducent(Producent p) {
         logger.info("Szukanie cydrów producenta: " + p.getNazwa());
-        // Filtrujemy wszystkie cydry, sprawdzając czy na ich liście producentów znajduje się ten szukany
-        // (porównujemy po ID, aby uniknąć problemów z referencjami obiektów)
-        return cydrRepository.findAll().stream()
-                .filter(cydr -> cydr.getProducenci().stream()
-                        .anyMatch(prod -> prod.getId() == p.getId()))
-                .collect(Collectors.toList());
+        return p.getOferta();
     }
 
     @Override
