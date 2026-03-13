@@ -1,11 +1,24 @@
 package cydrownia.model;
 
+
+import jakarta.validation.constraints.*;
+
 public class Cydr {
 
+    @PositiveOrZero
     private int id;
+
+    @NotBlank
+    @Size(min = 2, max = 100)
     private String nazwa;
-    private String styl; // np. "Półsłodki", "Musujący"
+
+    @NotBlank
+    private String styl;
+
+    @Positive
     private double cena;
+
+    @NotNull
     private boolean dostepny;
 
     public Cydr(int id, String nazwa, String styl, double cena) {

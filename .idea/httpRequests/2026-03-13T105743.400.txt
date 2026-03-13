@@ -1,0 +1,2 @@
+errors:
+Field error in object 'cydr' on field 'cena': rejected value [-25.0]; codes [Positive.cydr.cena,Positive.cena,Positive.double,Positive]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [cydr.cena,cena]; arguments []; default message [cena]]; default message [musi być większe od 0]

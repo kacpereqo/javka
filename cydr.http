@@ -1,0 +1,23 @@
+### Get all ciders
+GET http://localhost:8080/api/ciders
+
+### Get a cider by ID
+GET http://localhost:8080/api/ciders/{id}
+
+### Create a new cider
+POST http://localhost:8080/api/ciders
+Content-Type: application/json
+
+{
+  "id": 999,
+  "nazwa": "aaaNew Cidear",
+  "styl": "Półsłodki",
+  "cena": -25.0
+}
+
+### Get all producers
+GET http://localhost:8080/api/producers
+
+### Get a producer by ID
+GET http://localhost:8080/api/producers/{id}
+

@@ -1,0 +1,2 @@
+errors:
+Field error in object 'cydr' on field 'nazwa': rejected value [null]; codes [NotBlank.cydr.nazwa,NotBlank.nazwa,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [cydr.nazwa,nazwa]; arguments []; default message [nazwa]]; default message [nie może być odstępem]
