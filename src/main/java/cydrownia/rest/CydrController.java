@@ -1,7 +1,9 @@
 package cydrownia.rest;
 
 import cydrownia.model.Cydr;
+import cydrownia.rest.dto.CydrDTO;
 import cydrownia.service.CydrService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.MessageSource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("/api/ciders")
 public class CydrController {
@@ -20,20 +23,16 @@ public class CydrController {
 
 
     private final CydrService cydrService;
-    private final CydrValidator validator;
-
-    public CydrController(MessageSource messageSource, CydrService cydrService, CydrValidator validator) {
-        this.cydrService = cydrService;
-        this.validator = validator;
-    }
-
-    @InitBinder
-    void initBinder(WebDataBinder binder) {
-        binder.setValidator(validator);
-    }
 
     @GetMapping
-    public List<Cydr> getAll() {
+    public List<Cydr> getAll(
+            @RequestParam(value = "phrase", required = false) String phrase
+    ) {
+
+        if (phrase != null && phrase.equals("foo")){
+            throw new IllegalArgumentException("foo");
+        }
+
         return cydrService.getAllCydrs();
     }
 
@@ -50,24 +49,19 @@ public class CydrController {
 
 
     @PostMapping
-    public ResponseEntity<?> addCydr(@Validated @RequestBody Cydr newCydr, BindingResult bindingResult, Errors errors) {
+    public ResponseEntity<?> addCydr(@RequestBody @Validated CydrDTO cydrDTO, Errors errors) {
 
-        if (bindingResult.hasErrors()) {
-            String errorMessage = errors.getAllErrors().stream()
-                    .map(oe->oe.toString())
-                    .reduce("errors:\n", (accu,oe) -> accu+oe+"\n");
-            return ResponseEntity.badRequest().body(errorMessage);
+        if (errors.hasErrors()){
+            return ResponseEntity.badRequest().build();
         }
 
-//        if (bindingResult.hasErrors()) {
-//            String errorMessage = errors.getAllErrors().stream()
-//                    .map(oe->messageSource.getMessage(oe.getCode(), new Object[0], locale))
-//                    .reduce("errors:\n", (accu,oe) -> accu+oe+"\n");
-//            return ResponseEntity.badRequest().body(errorMessage);
-//        }
+        var newCydr  = new Cydr();
+        newCydr.setNazwa(cydrDTO.getNazwa());
+        newCydr.setCena(cydrDTO.getCena());
+        newCydr.setDostepny(cydrDTO.isDostepny());
+        newCydr.setStyl(cydrDTO.getStyl());
 
-
-            cydrService.addCydr(newCydr);
+        cydrService.addCydr(newCydr);
         return ResponseEntity.status(HttpStatus.CREATED).body(newCydr);
     }
 }

@@ -1,12 +1,14 @@
 package cydrownia.rest;
 
+import cydrownia.model.Cydr;
 import cydrownia.model.Producent;
 import cydrownia.service.ProducentService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.Errors;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -34,5 +36,16 @@ public class ProducentController {
         } else {
             return ResponseEntity.notFound().build();
         }
+    }
+
+    @PostMapping
+    public ResponseEntity<?> addProducent(@RequestBody @Validated Producent newProducent, Errors errors) {
+
+        if (errors.hasErrors()){
+            return ResponseEntity.badRequest().build();
+        }
+
+        producentService.addProducent(newProducent);
+        return ResponseEntity.status(HttpStatus.CREATED).body(newProducent);
     }
 }

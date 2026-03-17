@@ -1,6 +1,0 @@
-{
-  "timestamp": "2026-03-13T09:30:31.869+00:00",
-  "status": 400,
-  "error": "Bad Request",
-  "path": "/api/ciders"
-}

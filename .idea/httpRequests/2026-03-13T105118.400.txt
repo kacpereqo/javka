@@ -1,2 +1,0 @@
-errors:
-Field error in object 'cydr' on field 'nazwa': rejected value [aaaNew Cidear]; codes [cydr.duplicated.cydr.nazwa,cydr.duplicated.nazwa,cydr.duplicated.java.lang.String,cydr.duplicated]; arguments []; default message [Cydr o tej nazwie już istnieje]

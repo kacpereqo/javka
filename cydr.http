@@ -1,23 +1,34 @@
 ### Get all ciders
-GET http://localhost:8080/api/ciders
+GET http://localhost:8080/api/ciders?phrase=foo
 
 ### Get a cider by ID
-GET http://localhost:8080/api/ciders/{id}
+@cider_id = 101
+GET http://localhost:8080/api/ciders/{{cider_id}}
+
 
 ### Create a new cider
 POST http://localhost:8080/api/ciders
 Content-Type: application/json
 
 {
-  "id": 999,
-  "nazwa": "aaaNew Cidear",
+  "nazwa": "aaaddsadsaddNew Cidear",
   "styl": "Półsłodki",
-  "cena": -25.0
+  "cena": 25.0
 }
 
 ### Get all producers
 GET http://localhost:8080/api/producers
 
 ### Get a producer by ID
-GET http://localhost:8080/api/producers/{id}
+@producer_id = 1
+GET http://localhost:8080/api/producers/{{producer_id}}
 
+### Create a new producer
+POST http://localhost:8080/api/producers
+Content-Type: application/json
+
+{
+  "id": 1,
+  "nazwa": "jan",
+  "opis": "najlepszy cydr w tym wszechswiecie"
+}

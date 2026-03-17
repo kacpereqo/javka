@@ -1,28 +1,27 @@
 package cydrownia.rest;
 
 import cydrownia.model.Cydr;
+import cydrownia.rest.dto.CydrDTO;
 import cydrownia.service.CydrService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 @Component
+@RequiredArgsConstructor
 public class CydrValidator implements Validator {
 
     private final CydrService cydrService;
 
-    public CydrValidator(CydrService cydrService) {
-        this.cydrService = cydrService;
-    }
-
     @Override
     public boolean supports(Class<?> clazz) {
-        return clazz.isAssignableFrom(Cydr.class);
+        return clazz.isAssignableFrom(CydrDTO.class);
     }
 
     @Override
     public void validate(Object target, Errors errors) {
-        Cydr validatedCydr = (Cydr) target;
+        CydrDTO validatedCydr = (CydrDTO) target;
 
         boolean is_duplicated = cydrService.getAllCydrs().stream()
                 .anyMatch(c -> c.getNazwa().equalsIgnoreCase(validatedCydr.getNazwa()));

@@ -1,0 +1,58 @@
+[
+  {
+    "id": 101,
+    "nazwa": "Szara Reneta",
+    "styl": "Wytrawny",
+    "cena": 25.0,
+    "dostepny": true
+  },
+  {
+    "id": 102,
+    "nazwa": "Klasyczny",
+    "styl": "Półsłodki",
+    "cena": 12.5,
+    "dostepny": true
+  },
+  {
+    "id": 103,
+    "nazwa": "Lodowy",
+    "styl": "Słodki/Deserowy",
+    "cena": 45.0,
+    "dostepny": true
+  },
+  {
+    "id": 0,
+    "nazwa": "aaaNew Cidear",
+    "styl": "Półsłodki",
+    "cena": 25.0,
+    "dostepny": false
+  },
+  {
+    "id": 0,
+    "nazwa": "aaaNew Cidear",
+    "styl": "Półsłodki",
+    "cena": 25.0,
+    "dostepny": false
+  },
+  {
+    "id": 0,
+    "nazwa": "aaaNew Cidear",
+    "styl": "Półsłodki",
+    "cena": 25.0,
+    "dostepny": false
+  },
+  {
+    "id": 0,
+    "nazwa": "aaaNew Cidear",
+    "styl": "Półsłodki",
+    "cena": 25.0,
+    "dostepny": false
+  },
+  {
+    "id": 0,
+    "nazwa": "aaaNew Cidear",
+    "styl": "Półsłodki",
+    "cena": 25.0,
+    "dostepny": false
+  }
+]
