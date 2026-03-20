@@ -1,48 +1,40 @@
 package cydrownia.model;
 
+import jakarta.persistence.*;
+import lombok.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Producent {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String nazwa; // np. "Cydr Chyliczki"
-    private String opis; // np. "Rzemieślnicza cydrownia z Mazowsza"
 
-    // Lista cydrów oferowanych przez tego producenta
+    @Column(nullable = false)
+    private String nazwa;
+
+    private String opis;
+
+    private String logo;
+
+    @OneToMany(mappedBy = "producent", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Cydr> oferta = new ArrayList<>();
+
+    public void addCydr(Cydr c) {
+        oferta.add(c);
+        c.setProducent(this); // Ważne dla synchronizacji relacji dwukierunkowej
+    }
 
     public Producent(int id, String nazwa, String opis) {
         this.id = id;
         this.nazwa = nazwa;
         this.opis = opis;
-    }
-
-    public Producent() {
-    }
-
-    // Gettery i Settery
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
-
-    public String getNazwa() { return nazwa; }
-    public void setNazwa(String nazwa) { this.nazwa = nazwa; }
-
-    public String getOpis() { return opis; }
-    public void setOpis(String opis) { this.opis = opis; }
-
-    public List<Cydr> getOferta() { return oferta; }
-    public void setOferta(List<Cydr> oferta) { this.oferta = oferta; }
-
-    public void addCydr(Cydr c) {
-        this.oferta.add(c);
-    }
-
-    @Override
-    public String toString() {
-        return "Producent{" +
-                "nazwa='" + nazwa + '\'' +
-                ", opis='" + opis + '\'' +
-                '}';
     }
 }

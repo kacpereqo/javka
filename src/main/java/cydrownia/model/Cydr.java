@@ -1,59 +1,45 @@
 package cydrownia.model;
 
-
+import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
+import lombok.*;
 
+@Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Cydr {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @PositiveOrZero
     private int id;
 
     @NotBlank
     @Size(min = 2, max = 100)
+    @Column(nullable = false)
     private String nazwa;
 
     @NotBlank
+    @Column(nullable = false)
     private String styl;
 
     @Positive
+    @Column(nullable = false)
     private double cena;
 
     @NotNull
-    private boolean dostepny;
+    private boolean dostepny = true;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "producent_id")
+    private Producent producent;
 
     public Cydr(int id, String nazwa, String styl, double cena) {
         this.id = id;
         this.nazwa = nazwa;
         this.styl = styl;
         this.cena = cena;
-        this.dostepny = true; // domyślnie dostępny
-    }
-
-    public Cydr() {
-    }
-
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
-
-    public String getNazwa() { return nazwa; }
-    public void setNazwa(String nazwa) { this.nazwa = nazwa; }
-
-    public String getStyl() { return styl; }
-    public void setStyl(String styl) { this.styl = styl; }
-
-    public double getCena() { return cena; }
-    public void setCena(double cena) { this.cena = cena; }
-
-    public boolean isDostepny() { return dostepny; }
-    public void setDostepny(boolean dostepny) { this.dostepny = dostepny; }
-
-
-    @Override
-    public String toString() {
-        return "Cydr{" +
-                "nazwa='" + nazwa + '\'' +
-                ", cena=" + cena +
-                ", dostepny=" + dostepny +
-                '}';
     }
 }

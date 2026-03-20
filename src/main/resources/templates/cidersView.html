@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista Cydrów</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet"/>
+</head>
+<body>
+<header>
+    <a href="/"><h1>Cydrownia</h1></a>
+    <!-- Jeśli w modelu nie ma "title", wyświetli się domyślny tekst -->
+    <h2 th:text="${title ?: 'Nasze Cydry'}"></h2>
+</header>
+
+<section>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nazwa</th>
+            <th>Styl</th>
+            <th>Cena</th>
+            <th>Status</th>
+            <th>Akcja</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Iteracja po liście 'cydry' przekazanej z kontrolera -->
+        <tr th:each="c : ${cydry}">
+            <td th:text="${c.id}">1</td>
+            <td th:text="${c.nazwa}">Nazwa cydru</td>
+            <td th:text="${c.styl}">Wytrawny</td>
+            <td th:text="${#numbers.formatDecimal(c.cena, 1, 2) + ' zł'}">0.00 zł</td>
+            <td>
+                <span th:if="${c.dostepny}" style="color: green;">Dostępny</span>
+                <span th:unless="${c.dostepny}" style="color: red;">Brak</span>
+            </td>
+            <td class="search-container">
+                <!-- Przykładowy link do szczegółów wykorzystujący ID -->
+                <a class="search" th:href="@{/ciders/details/{id}(id=${c.id})}">Szczegóły</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+
+<div id="orders">
+    <!-- Tu można dodać podsumowanie zamówienia -->
+</div>
+
+<footer>
+    <!-- Wyświetla zmienną tip, jeśli została dodana do modelu -->
+    <p th:text="${tip}">Wskazówka</p>
+</footer>
+
+</body>
+</html>

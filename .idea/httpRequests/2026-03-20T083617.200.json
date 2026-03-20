@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "nazwa": "Cydr Lubelski",
+    "opis": "Duży producent",
+    "oferta": []
+  },
+  {
+    "id": 2,
+    "nazwa": "Cydr Chyliczki",
+    "opis": "Rzemieślniczy",
+    "oferta": []
+  }
+]

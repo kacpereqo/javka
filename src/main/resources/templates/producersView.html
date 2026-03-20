@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Cydrownie</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet"/>
+</head>
+<body>
+<header>
+    <a href="/"><h1>Pix Cydr</h1></a>
+    <h2 th:text="${title}">Lista Producentów</h2>
+</header>
+
+<section>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Producent</th>
+            <th>Opis</th>
+            <th>Liczba Cydrów</th>
+            <th>Zobacz Ofertę</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="p : ${producenci}">
+            <td th:text="${p.id}">1</td>
+            <td>
+                <strong th:text="${p.nazwa}">Nazwa Producenta</strong>
+            </td>
+            <td th:text="${p.opis}">Krótki opis cydrowni...</td>
+            <td th:text="${p.oferta.size()}">0</td>
+            <td class="search-container">
+                <a class="search" th:href="@{/ciders(producerId=${p.id})}"></a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+
+<div id="orders">
+    <!-- Miejsce na dodatkowe info -->
+</div>
+
+<footer>
+    <p th:text="${tip}">Wybierz swojego ulubionego producenta!</p>
+</footer>
+
+</body>
+</html>

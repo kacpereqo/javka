@@ -1,5 +1,5 @@
 ### Get all ciders
-GET http://localhost:8080/api/ciders?phrase=foo
+GET http://localhost:8080/api/ciders
 
 ### Get a cider by ID
 @cider_id = 101
@@ -28,7 +28,7 @@ POST http://localhost:8080/api/producers
 Content-Type: application/json
 
 {
-  "id": 1,
+  "id": 10,
   "nazwa": "jan",
   "opis": "najlepszy cydr w tym wszechswiecie"
 }
