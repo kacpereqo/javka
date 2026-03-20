@@ -1,7 +1,7 @@
 package cydrownia.repository.jpa;
 
 import cydrownia.model.Producent;
-import cydrownia.repository.ProducentRepository;
+import cydrownia.repository.ProducentDao;
 import jakarta.persistence.EntityManager;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
@@ -9,9 +9,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-@Repository
-@Primary
-public class JpaProducentDao implements ProducentRepository {
+//@Repository
+//@Primary
+public class JpaProducentDao implements ProducentDao {
 
     private final EntityManager entityManager;
 

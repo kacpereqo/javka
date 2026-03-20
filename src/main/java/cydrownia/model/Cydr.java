@@ -1,5 +1,6 @@
 package cydrownia.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.*;
@@ -34,6 +35,7 @@ public class Cydr {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "producent_id")
+    @JsonIgnore
     private Producent producent;
 
     public Cydr(int id, String nazwa, String styl, double cena) {

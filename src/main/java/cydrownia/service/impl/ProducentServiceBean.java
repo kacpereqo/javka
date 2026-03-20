@@ -2,7 +2,7 @@ package cydrownia.service.impl;
 
 import cydrownia.model.Cydr;
 import cydrownia.model.Producent;
-import cydrownia.repository.ProducentRepository;
+import cydrownia.repository.ProducentDao;
 import cydrownia.service.ProducentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,10 +16,10 @@ public class ProducentServiceBean implements ProducentService {
 
     private final Logger logger = Logger.getLogger(ProducentServiceBean.class.getName());
 
-    private final ProducentRepository producentRepository;
+    private final ProducentDao producentRepository;
 
     @Autowired
-    public ProducentServiceBean(ProducentRepository producentRepository) {
+    public ProducentServiceBean(ProducentDao producentRepository) {
         this.producentRepository = producentRepository;
     }
 

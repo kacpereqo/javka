@@ -2,7 +2,7 @@ package cydrownia.service.impl;
 
 import cydrownia.model.Cydr;
 import cydrownia.model.Producent;
-import cydrownia.repository.CydrRepository;
+import cydrownia.repository.CydrDao;
 import cydrownia.service.CydrService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,10 +15,10 @@ public class CydrServiceBean implements CydrService {
 
     private final Logger logger = Logger.getLogger(CydrServiceBean.class.getName());
 
-    private final CydrRepository cydrRepository;
+    private final CydrDao cydrRepository;
 
     @Autowired
-    public CydrServiceBean(CydrRepository cydrRepository) {
+    public CydrServiceBean(CydrDao cydrRepository) {
         this.cydrRepository = cydrRepository;
     }
 

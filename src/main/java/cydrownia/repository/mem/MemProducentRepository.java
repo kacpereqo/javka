@@ -1,14 +1,12 @@
 package cydrownia.repository.mem;
 
 import cydrownia.model.Producent;
-import cydrownia.repository.ProducentRepository;
-import org.springframework.stereotype.Component;
+import cydrownia.repository.ProducentDao;
 
-import java.util.ArrayList;
 import java.util.List;
 
 //@Component
-public class MemProducentRepository implements ProducentRepository {
+public class MemProducentRepository implements ProducentDao {
 
     @Override
     public List<Producent> findAll() {

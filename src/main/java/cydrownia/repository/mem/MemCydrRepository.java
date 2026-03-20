@@ -1,14 +1,12 @@
 package cydrownia.repository.mem;
 
 import cydrownia.model.Cydr;
-import cydrownia.repository.CydrRepository;
-import org.springframework.stereotype.Component;
-import org.springframework.context.annotation.Primary;
+import cydrownia.repository.CydrDao;
 
 import java.util.List;
 
 //@Component
-public class MemCydrRepository implements CydrRepository {
+public class MemCydrRepository implements CydrDao {
 
     @Override
     public List<Cydr> findAll() {

@@ -1,282 +1,182 @@
+/* Import klasycznych czcionek */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Crimson+Text:ital,wght@0,400;0,700;1,400&display=swap');
+
 body {
     text-align: center;
-    font-family: Candara, Calibri, Segoe, Segoe UI, Optima, Arial, sans-serif;
+    /* Zmiana na czcionkę szeryfową - jak w starej księdze */
+    font-family: 'Crimson Text', serif;
     margin: 0;
-    background-image: url("https://getreelcinemas.com//wp-content/uploads/2015/02/Background-Narrow.jpg");
-    background-position: center -80px;
-    background-repeat: no-repeat;
-    background-size: cover;
+    /* Tekstura ciemnego kamienia/piwnicy */
+    background-image: url("https://www.transparenttextures.com/patterns/dark-matter.png");
+    background-color: #1a120b; /* Bardzo głęboki brąz */
+    color: #e0d0b0; /* Kolor starego pergaminu */
     height: 100%;
-    background-color: black;
 }
 
+/* Linki w kolorze miedzi/mosiądzu */
 a {
-    color: #ffa91f !important;
+    color: #d4af37 !important;
     font-weight: normal;
     text-decoration: none;
-
+    transition: 0.3s;
 }
 
+a:hover {
+    color: #fff !important;
+    text-shadow: 0 0 8px #d4af37;
+}
 
 h1 {
-    color: green;
+    color: #d4af37;
     font-weight: lighter;
+    font-family: 'Cinzel', serif;
 }
 
 header {
-    font-family: Orbitron;
-}
-
-header a {
+    font-family: 'Cinzel', serif;
+    background-color: #2d1b0d; /* Ciemne drewno */
+    top: 0;
+    width: 100%;
+    position: fixed;
+    /* Cień rzucany przez belkę - efekt głębi w piwnicy */
+    box-shadow: 0px 5px 25px rgba(0,0,0,0.8);
     z-index: 1000;
+    border-bottom: 2px solid #5d4037;
 }
 
 header h1 {
-    border-right: 3px solid black;
-    color: #7b1b18;
-    background-color: #ffa91f;
+    border-right: 1px solid #5d4037;
+    color: #d4af37;
+    background-color: #3e2723; /* Jeszcze ciemniejszy brąz */
     float: left;
     margin: 0;
     padding: 20px 40px;
 }
 
-strong {
-    color: green;
-}
-
-section {
-    font-size: 1.5em;
-}
-
-
-header {
-    background-color: #ffa91f;
-    top: 0;
-    width: 100%;
-    position: fixed;
-    box-shadow: 0px 3px 65px 0px #7b1b18;
-}
-
-header img {
-    height: 50px;
-    vertical-align: bottom;
-}
-
-
 header h2 {
-    color: #7b1b18;
-    font-size: 2em;
+    color: #e0d0b0;
+    font-size: 1.8em;
     font-weight: lighter;
     margin: 0;
     overflow: hidden;
-    padding: 20px;
+    padding: 22px;
     pointer-events: none;
     position: fixed;
     width: 100%;
 }
 
-header h2 span {
-    color: #7b1b18;
-}
-
-header h3 {
-    float: right;
-    padding-right: 20px;
-    font-weight: normal;
-    color: #a00;
+strong {
+    color: #d4af37;
 }
 
 section {
-    margin-top: 200px;
+    font-size: 1.2em;
+    margin-top: 180px; /* Dostosowane do fixed header */
 }
 
-section table {
-    border-bottom: 10px solid #7b1b18;
-}
-
+/* Tabela jako stara deska/rejestr */
 table {
     margin: 0 auto;
     text-align: center;
     border-spacing: 0;
-
+    background-color: rgba(45, 27, 13, 0.8);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 1px solid #5d4037;
 }
 
-
-td {
-    padding: 20px;
-    font-weight: lighter;
-    font-size: 1.7em;
-}
-
-div#orderTable > table td, div#orderTable > table th {
-    font-size: 1.1em;
-    font-weight: lighter;
-    padding: 10px;
+section table {
+    border-bottom: 5px solid #5d4037;
 }
 
 th {
-    background-color: #ffa91f;
-    color: #7b1b18;
-    font-family: Orbitron;
-    font-size: 1.7em;
+    background-color: #3e2723;
+    color: #d4af37;
+    font-family: 'Cinzel', serif;
+    font-size: 1.2em;
     font-weight: normal;
     padding: 20px;
+    border-bottom: 2px solid #d4af37;
 }
 
-tr:nth-child(2n+2) td, tr:nth-child(2n+2) td a {
-    color: #ffd084;
+td {
+    padding: 15px 25px;
+    font-weight: lighter;
+    font-size: 1.1em;
+    border-bottom: 1px solid #3e2723;
 }
 
-tr td, tr td a {
-    color: #ffd084;
-    text-align: left;
-}
-
-
+/* Zebra striping - subtelne różnice w drewnie */
 tr {
-    background-color: rgb(27 24 24);
+    background-color: rgba(27, 18, 11, 0.9);
 }
 
 tr:nth-child(2n+2) {
-    background-color: rgba(1, 1, 1, 0.5);
+    background-color: rgba(45, 27, 13, 0.6);
 }
 
-td:hover img {
-    -webkit-transform: scale(1.25); /* Safari and Chrome */
-    -moz-transform: scale(1.25); /* Firefox */
-    -ms-transform: scale(1.25); /* IE 9 */
-    -o-transform: scale(1.25); /* Opera */
-    transform: scale(1.25);
+tr td, tr td a {
+    color: #e0d0b0; /* Jasny beż */
+    text-align: left;
 }
 
-td img {
-    height: 50px;
+/* Nadpisanie Twoich niebieskich linków w tabeli na złote */
+table a, .encourage a {
+    color: #d4af37 !important;
+    font-style: italic;
 }
 
-.encourage th {
-    color: black;
-}
-
-.link {
-    background-color: #402;
-    color: white;
-    float: right;
-    margin-bottom: 5px;
-    margin-left: 10px;
-    margin-right: 1px;
-    padding: 5px;
-}
-
-
-.link:hover {
-    cursor: pointer;
-}
-
-#totalPrice {
-    float: left;
-}
-
-#orders {
-    bottom: 0;
-    position: fixed;
-    right: 0;
-}
-
-#orderTable {
-    clear: both;
-}
-
-.circle {
-    background-color: white;
-    border: 2px solid black;
-    border-radius: 50%;
-    font-weight: bolder;
-    height: 20px;
-    margin: 0 auto;
-    text-align: center;
-    vertical-align: middle;
-    width: 20px;
-    padding: 3px;
-    font-weight: bold;
-    font-size: 17px;
-}
-
-#orderTable .circle {
-    background-color: white;
-    border: 2px solid black;
-    border-radius: 50%;
-    font-weight: bolder;
-    height: 20px;
-    margin: 0 auto;
-    text-align: center;
-    vertical-align: middle;
-    width: 20px;
-    padding: 3px;
-    font-weight: bold;
-}
-
-.action:hover {
-    cursor: pointer;
-}
-
-
-section.no-margin {
-    margin-top: 10px;
-}
-
-section.no-margin p {
-    color: #7b1b18;
-}
-
+/* Styl przycisku "Otwórz/Szukaj" - efekt wosku lub starej pieczęci */
 .search {
-    /* width: 80px; */
-    /* height: 10px; */
-    background: url(../img/search.png);
-    background-size: contain;
-    padding: 20px;
-    /* line-height: 1px; */
-    font-size: 0px;
-    text-align: center;
+    background-color: #8b0000; /* Ciemna czerwień woskowa */
+    border-radius: 50%;
+    padding: 15px;
+    display: inline-block;
+    border: 1px solid #d4af37;
+    transition: 0.3s;
 }
 
-.search-container {
-    text-align: center;
-}
-
-.rating {
-    font-size: 18px;
-    text-align: center;
-}
-
-table a {
-    color: blue !important;
-}
-
-.encourage a {
-    color: blue !important;
-}
-
-footer {
-    bottom: 0;
-    color: #402;
-    left: 0;
-    padding: 10px;
-    position: absolute;
-    background-color: rgba(1, 1, 1, 0.7);
-}
-
-footer a {
-    color: #402;
+.search:hover {
+    background-color: #d4af37;
+    transform: rotate(10deg);
 }
 
 .action {
-    background-color: #402;
-    height: 20px;
+    background-color: #5d4037;
+    height: 25px;
     margin: 0px auto;
     text-align: center;
-    width: 20px;
-    padding: 3px;
+    width: 25px;
+    padding: 5px;
     font-weight: bold;
     font-size: 17px;
-    color: white;
+    color: #d4af37;
+    border: 1px solid #d4af37;
+}
+
+/* Footer - subtelny napis na dole strony */
+footer {
+    bottom: 0;
+    color: #8d6e63;
+    left: 0;
+    padding: 15px;
+    position: relative; /* Zmieniono z absolute, by nie zasłaniał tabeli */
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-top: 50px;
+}
+
+footer a {
+    color: #d4af37;
+}
+
+/* Stylowy licznik w kółku */
+.circle, #orderTable .circle {
+    background-color: #d4af37;
+    border: 2px solid #1a120b;
+    color: #1a120b;
+    border-radius: 50%;
+    font-weight: bold;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    display: inline-block;
 }

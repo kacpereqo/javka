@@ -3,7 +3,7 @@ package cydrownia.repository;
 import cydrownia.model.Producent;
 import java.util.List;
 
-public interface ProducentRepository {
+public interface ProducentDao {
     List<Producent> findAll();
     Producent findByName(String nazwa);
 

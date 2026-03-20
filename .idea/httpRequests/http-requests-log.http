@@ -1,3 +1,133 @@
+POST http://localhost:8080/api/producers
+Content-Type: application/json
+Content-Length: 80
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "id": 10,
+  "nazwa": "jan",
+  "opis": "najlepszy cydr w tym wszechswiecie"
+}
+
+<> 2026-03-20T134102.201.json
+
+###
+
+GET http://localhost:8080/api/producers/1
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-03-20T134102.200.json
+
+###
+
+GET http://localhost:8080/api/producers
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-03-20T134101.200.json
+
+###
+
+POST http://localhost:8080/api/ciders
+Content-Type: application/json
+Content-Length: 81
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "nazwa": "aaaddsadsaddNew Cidear",
+  "styl": "Półsłodki",
+  "cena": 25.0
+}
+
+<> 2026-03-20T134101.400.txt
+
+###
+
+GET http://localhost:8080/api/ciders/101
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-03-20T134100-1.200.json
+
+###
+
+GET http://localhost:8080/api/ciders
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-03-20T134100.200.json
+
+###
+
+GET http://localhost:8080/api/ciders
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-03-20T134054.200.json
+
+###
+
+POST http://localhost:8080/api/ciders
+Content-Type: application/json
+Content-Length: 81
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "nazwa": "aaaddsadsaddNew Cidear",
+  "styl": "Półsłodki",
+  "cena": 25.0
+}
+
+<> 2026-03-20T133917.400.txt
+
+###
+
+POST http://localhost:8080/api/producers
+Content-Type: application/json
+Content-Length: 80
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "id": 10,
+  "nazwa": "jan",
+  "opis": "najlepszy cydr w tym wszechswiecie"
+}
+
+<> 2026-03-20T133903.201.json
+
+###
+
+POST http://localhost:8080/api/ciders
+Content-Type: application/json
+Content-Length: 81
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "nazwa": "aaaddsadsaddNew Cidear",
+  "styl": "Półsłodki",
+  "cena": 25.0
+}
+
+<> 2026-03-20T133902.201.json
+
+###
+
 GET http://localhost:8080/api/ciders
 User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.3
 Accept-Encoding: br, deflate, gzip, x-gzip
@@ -593,170 +723,6 @@ Accept: */*
 }
 
 <> 2026-03-17T122625.201.json
-
-###
-
-POST http://localhost:8080/api/producers
-Content-Type: application/json
-Content-Length: 79
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "id": 1,
-  "nazwa": "jan",
-  "opis": "najlepszy cydr w tym wszechswiecie"
-}
-
-<> 2026-03-17T122535.500.json
-
-###
-
-POST http://localhost:8080/api/producers
-Content-Type: application/json
-Content-Length: 79
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "id": 1,
-  "nazwa": "jan",
-  "opis": "najlepszy cydr w tym wszechswiecie"
-}
-
-<> 2026-03-17T122534.500.json
-
-###
-
-POST http://localhost:8080/api/ciders
-Content-Type: application/json
-Content-Length: 81
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "nazwa": "aaaddsadsaddNew Cidear",
-  "styl": "Półsłodki",
-  "cena": 25.0
-}
-
-###
-
-POST http://localhost:8080/api/ciders
-Content-Type: application/json
-Content-Length: 81
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "nazwa": "aaaddsadsaddNew Cidear",
-  "styl": "Półsłodki",
-  "cena": 25.0
-}
-
-<> 2026-03-17T121708.201.json
-
-###
-
-POST http://localhost:8080/api/ciders
-Content-Type: application/json
-Content-Length: 81
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "nazwa": "aaaddsadsaddNew Cidear",
-  "styl": "Półsłodki",
-  "cena": 25.0
-}
-
-<> 2026-03-17T121328.500.json
-
-###
-
-POST http://localhost:8080/api/ciders
-Content-Type: application/json
-Content-Length: 92
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "id": 1,
-  "nazwa": "aaaddsadsaddNew Cidear",
-  "styl": "Półsłodki",
-  "cena": 25.0
-}
-
-<> 2026-03-17T121326.500.json
-
-###
-
-POST http://localhost:8080/api/ciders
-Content-Type: application/json
-Content-Length: 88
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "id": 1,
-  "nazwa": "aaadsaddNew Cidear",
-  "styl": "Półsłodki",
-  "cena": 25.0
-}
-
-<> 2026-03-17T121322.500.json
-
-###
-
-POST http://localhost:8080/api/ciders
-Content-Type: application/json
-Content-Length: 85
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "id": 1,
-  "nazwa": "aaaddNew Cidear",
-  "styl": "Półsłodki",
-  "cena": 25.0
-}
-
-<> 2026-03-17T121318.500.json
-
-###
-
-POST http://localhost:8080/api/ciders
-Content-Type: application/json
-Content-Length: 85
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "id": 1,
-  "nazwa": "aaaddNew Cidear",
-  "styl": "Półsłodki",
-  "cena": 25.0
-}
-
-<> 2026-03-17T121316.500.json
-
-###
-
-GET http://localhost:8080/api/ciders?phrase=foo
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-<> 2026-03-17T121021.418.txt
 
 ###
 

@@ -1,7 +1,8 @@
 {
-  "id": 0,
+  "id": 105,
   "nazwa": "aaaddsadsaddNew Cidear",
   "styl": "Półsłodki",
   "cena": 25.0,
-  "dostepny": false
+  "dostepny": false,
+  "producent": null
 }

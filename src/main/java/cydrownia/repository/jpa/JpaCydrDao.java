@@ -1,7 +1,7 @@
 package cydrownia.repository.jpa;
 
 import cydrownia.model.Cydr;
-import cydrownia.repository.CydrRepository;
+import cydrownia.repository.CydrDao;
 import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
 import org.springframework.context.annotation.Primary;
@@ -9,9 +9,9 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
-@Primary
-public class JpaCydrDao implements CydrRepository {
+//@Repository
+//@Primary
+public class JpaCydrDao implements CydrDao {
 
     private final EntityManager entityManager;
 
