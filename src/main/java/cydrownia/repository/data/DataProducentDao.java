@@ -1,12 +1,12 @@
 package cydrownia.repository.data;
 
-import cydrownia.model.Cydr;
 import cydrownia.model.Producent;
-import cydrownia.repository.CydrDao;
 import cydrownia.repository.ProducentDao;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -27,6 +27,7 @@ public class DataProducentDao implements ProducentDao {
         return producentRepository.findByNazwa(nazwa);
     }
 
+    @Transactional(propagation = Propagation.MANDATORY)
     @Override
     public void add(Producent producent) {
         producentRepository.save(producent);

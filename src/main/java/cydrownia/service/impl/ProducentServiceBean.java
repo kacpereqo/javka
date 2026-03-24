@@ -5,7 +5,10 @@ import cydrownia.model.Producent;
 import cydrownia.repository.ProducentDao;
 import cydrownia.service.ProducentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.logging.Logger;
@@ -47,6 +50,8 @@ public class ProducentServiceBean implements ProducentService {
                 .collect(Collectors.toList());
     }
 
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @Transactional(propagation = Propagation.REQUIRED)
     @Override
     public void addProducent(Producent p) {
         logger.info("Rejestracja nowego producenta: " + p.getNazwa());

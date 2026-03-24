@@ -4,6 +4,7 @@ import cydrownia.model.Cydr;
 import cydrownia.repository.CydrDao;
 import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
+import org.hibernate.sql.model.PreparableMutationOperation;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 

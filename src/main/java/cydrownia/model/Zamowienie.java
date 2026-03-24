@@ -9,7 +9,6 @@ public class Zamowienie {
     private String numerZamowienia; // np. "ORD-2023-001"
     private String status; // np. "NOWE", "WYSŁANE", "DOSTARCZONE"
 
-    // Lista cydrów w tym zamówieniu (koszyku)
     private List<Cydr> produkty = new ArrayList<>();
 
     public Zamowienie(int id, String numerZamowienia, String status) {

@@ -29,7 +29,7 @@ public class Producent {
 
     public void addCydr(Cydr c) {
         oferta.add(c);
-        c.setProducent(this); // Ważne dla synchronizacji relacji dwukierunkowej
+        c.setProducent(this);
     }
 
     public Producent(int id, String nazwa, String opis) {

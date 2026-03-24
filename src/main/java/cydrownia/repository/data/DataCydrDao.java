@@ -5,6 +5,8 @@ import cydrownia.repository.CydrDao;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -20,6 +22,7 @@ public class DataCydrDao implements CydrDao {
         return cydrRepository.findAll();
     }
 
+    @Transactional(propagation = Propagation.MANDATORY)
     @Override
     public void add(Cydr cydr) {
         cydrRepository.save(cydr);

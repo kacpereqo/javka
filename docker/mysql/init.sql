@@ -71,12 +71,7 @@ CREATE TABLE role
 );
 
 INSERT INTO user(username, password)
-VALUES ('admin', '$2a$10$eiA5dKnoUk77EKXZhJvq7O3XBy5ECYupA0FCEm0gS58QSY6PoPcOS'), -- hasło: password
-       ('pracownik', '$2a$10$eiA5dKnoUk77EKXZhJvq7O3XBy5ECYupA0FCEm0gS58QSY6PoPcOS'),
-       ('klient', '$2a$10$eiA5dKnoUk77EKXZhJvq7O3XBy5ECYupA0FCEm0gS58QSY6PoPcOS');
+VALUES ('user1', 'user1'),
 
 INSERT INTO role(username, role)
-VALUES ('admin', 'CYDR_ADMIN'),
-       ('admin', 'PRODUCENT_ADMIN'),
-       ('pracownik', 'ORDER_ADMIN'),
-       ('klient', 'USER');
+VALUES ('user1', 'ROLE_ADMIN'),
