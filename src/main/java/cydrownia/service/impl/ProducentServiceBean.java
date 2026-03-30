@@ -50,7 +50,7 @@ public class ProducentServiceBean implements ProducentService {
                 .collect(Collectors.toList());
     }
 
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PreAuthorize("hasRole('ADMIN')")
     @Transactional(propagation = Propagation.REQUIRED)
     @Override
     public void addProducent(Producent p) {

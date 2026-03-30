@@ -28,11 +28,18 @@ public class CydrowniaSecurityConfig
     }
 
     @Bean
-    UserDetailsService userDetailsService(DataSource dataSource){
+    public UserDetailsService userDetailsService(DataSource dataSource) {
         JdbcUserDetailsManager manager = new JdbcUserDetailsManager();
         manager.setDataSource(dataSource);
-        manager.setUsersByUsernameQuery("SELECT username, password, enabled FROM users WHERE username = ?");
-        manager.setAuthoritiesByUsernameQuery("SELECT username, authority FROM authorities WHERE username = ?");
+
+        manager.setUsersByUsernameQuery(
+                "SELECT username, password, true FROM user WHERE username = ?"
+        );
+
+        manager.setAuthoritiesByUsernameQuery(
+                "SELECT username, role FROM role WHERE username = ?"
+        );
+
         return manager;
     }
 
@@ -40,8 +47,6 @@ public class CydrowniaSecurityConfig
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         return http.csrf().disable()
                 .authorizeHttpRequests(request -> request
-//                        .requestMatchers(HttpMethod.POST, "/api/ciders").hasRole("ADMIN")
-//                        .requestMatchers(HttpMethod.POST, "/api/producers").hasRole("ADMIN")
                         .anyRequest().permitAll()
                 ).httpBasic().and().build();
     }

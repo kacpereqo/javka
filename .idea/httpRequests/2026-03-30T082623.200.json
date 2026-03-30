@@ -1,0 +1,30 @@
+[
+  {
+    "id": 101,
+    "nazwa": "Szara Reneta",
+    "styl": "Wytrawny",
+    "cena": 25.0,
+    "dostepny": true
+  },
+  {
+    "id": 102,
+    "nazwa": "Klasyczny",
+    "styl": "PÃ³Å‚sÅ‚odki",
+    "cena": 12.5,
+    "dostepny": true
+  },
+  {
+    "id": 103,
+    "nazwa": "Lodowy",
+    "styl": "SÅ‚odki/Deserowy",
+    "cena": 45.0,
+    "dostepny": true
+  },
+  {
+    "id": 104,
+    "nazwa": "KrÄ…plewo",
+    "styl": "Wytrawny",
+    "cena": 28.0,
+    "dostepny": true
+  }
+]

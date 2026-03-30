@@ -26,14 +26,6 @@ CREATE TABLE `zamowienie`
     `status` varchar(50)  NOT NULL,
     PRIMARY KEY (`id`)
 );
-CREATE TABLE `zamowienie_cydr`
-(
-    `zamowienie_id` int NOT NULL,
-    `cydr_id`       int NOT NULL,
-    CONSTRAINT `fk_z_cydr` FOREIGN KEY (`cydr_id`) REFERENCES `cydr` (`id`),
-    CONSTRAINT `fk_z_zamowienie` FOREIGN KEY (`zamowienie_id`) REFERENCES `zamowienie` (`id`)
-);
-
 
 INSERT INTO `producent`(`id`, `nazwa`, `opis`, `logo`)
 VALUES (1, 'Cydr Chyliczki', 'Rzemieślniczy cydr z Mazowsza', 'https://cydrchyliczki.pl/logo.png'),
@@ -50,28 +42,20 @@ INSERT INTO `zamowienie`(`id`, `numer`, `status`)
 VALUES (501, 'ORD-2024-001', 'NOWE'),
        (502, 'ORD-2024-002', 'WYSŁANE');
 
-INSERT INTO `zamowienie_cydr`(`zamowienie_id`, `cydr_id`)
-VALUES (501, 101),
-       (501, 103),
-       (502, 102);
-
 
 CREATE TABLE user
 (
     id       int primary key auto_increment,
-    username VARCHAR(255),
-    password VARCHAR(255)
+    username VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE role
 (
     id       int primary key auto_increment,
-    username VARCHAR(255),
-    role     VARCHAR(255)
+    username VARCHAR(255) NOT NULL,
+    role     VARCHAR(255) NOT NULL
 );
 
-INSERT INTO user(username, password)
-VALUES ('user1', 'user1'),
-
-INSERT INTO role(username, role)
-VALUES ('user1', 'ROLE_ADMIN'),
+INSERT INTO user(username, password) VALUES ('user1', 'user1');
+INSERT INTO role(username, role) VALUES ('user1', 'ROLE_ADMIN');

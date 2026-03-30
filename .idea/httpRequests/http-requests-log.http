@@ -1,4 +1,70 @@
 POST http://localhost:8080/api/ciders
+Content-Type: application/json
+Content-Length: 96
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: JSESSIONID=5C663B88DDE1C4C279387E48B53135BE
+
+{
+  "nazwa": "aaaddsadsasdadssadsadasdaddNew Cidear",
+  "styl": "Półsłodki",
+  "cena": 25.0
+}
+
+<> 2026-03-30T082634.401.json
+
+###
+
+POST http://localhost:8080/api/ciders
+Authorization: Basic user1 user1
+Content-Type: application/json
+Content-Length: 93
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: JSESSIONID=5C663B88DDE1C4C279387E48B53135BE
+
+{
+  "nazwa": "aaaddsadsasdadssadsadaddNew Cidear",
+  "styl": "Półsłodki",
+  "cena": 25.0
+}
+
+<> 2026-03-30T082627.400.txt
+
+###
+
+POST http://localhost:8080/api/ciders
+Authorization: Basic user1 user1
+Content-Type: application/json
+Content-Length: 93
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: JSESSIONID=5C663B88DDE1C4C279387E48B53135BE
+
+{
+  "nazwa": "aaaddsadsasdadssadsadaddNew Cidear",
+  "styl": "Półsłodki",
+  "cena": 25.0
+}
+
+<> 2026-03-30T082625.201.json
+
+###
+
+GET http://localhost:8080/api/ciders
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+Cookie: JSESSIONID=5C663B88DDE1C4C279387E48B53135BE
+
+<> 2026-03-30T082623.200.json
+
+###
+
+POST http://localhost:8080/api/ciders
 Authorization: Basic user2 user2
 Content-Type: application/json
 Content-Length: 93
@@ -659,74 +725,6 @@ Accept: */*
 }
 
 <> 2026-03-17T123831.201.json
-
-###
-
-POST http://localhost:8080/api/producers
-Content-Type: application/json
-Content-Length: 79
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "id": 1,
-  "nazwa": "jan",
-  "opis": "najlepszy cydr w tym wszechswiecie"
-}
-
-<> 2026-03-17T123757.201.json
-
-###
-
-POST http://localhost:8080/api/producers
-Content-Type: application/json
-Content-Length: 79
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "id": 1,
-  "nazwa": "jan",
-  "opis": "najlepszy cydr w tym wszechswiecie"
-}
-
-<> 2026-03-17T123643.201.json
-
-###
-
-POST http://localhost:8080/api/producers
-Content-Type: application/json
-Content-Length: 79
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "id": 1,
-  "nazwa": "jan",
-  "opis": "najlepszy cydr w tym wszechswiecie"
-}
-
-<> 2026-03-17T123514.201.json
-
-###
-
-POST http://localhost:8080/api/producers
-Content-Type: application/json
-Content-Length: 79
-User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.3.3
-Accept-Encoding: br, deflate, gzip, x-gzip
-Accept: */*
-
-{
-  "id": 1,
-  "nazwa": "jan",
-  "opis": "najlepszy cydr w tym wszechswiecie"
-}
-
-<> 2026-03-17T123314.201.json
 
 ###
 

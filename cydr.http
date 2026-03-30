@@ -9,10 +9,10 @@ GET http://localhost:8080/api/ciders/{{cider_id}}
 ### Create a new cider
 POST http://localhost:8080/api/ciders
 Content-Type: application/json
-Authorization: Basic user1 user1
+#Authorization: Basic user1 user1
 
 {
-  "nazwa": "aaaddsadsasdadssadsadaddNew Cidear",
+  "nazwa": "aaaddsadsasdadssadsadasdaddNew Cidear",
   "styl": "Półsłodki",
   "cena": 25.0
 }
